@@ -1,0 +1,1 @@
+default_app_config='eshope_products_category.apps.EshopeProductsCategoryConfig'

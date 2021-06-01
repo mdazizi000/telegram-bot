@@ -1,0 +1,18 @@
+{% load static %}
+<nav class="main-menu">
+                <div class="container">
+                    <ul class="list float-right">
+                           <li class="list-item">
+                                <a class="nav-link" href="/products">محصولات</a>
+                            </li>
+                        {% for categories in category %}
+                            <li class="list-item">
+                                <a class="nav-link" href="/products/{{categories.name}}">{{ categories.title}}</a>
+                            </li>
+                        {% endfor %}
+                        <li class="list-item amazing-item">
+                            <a class="nav-link" href="#" target="_blank">شگفت‌انگیزها</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>

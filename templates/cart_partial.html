@@ -1,0 +1,39 @@
+{% load static %}
+<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink1" style="width: 400px">
+                            <div class="basket-header">
+                                <div class="basket-total">
+                                    <span>مبلغ کل خرید:</span>
+                                    <span> {{total}}</span>
+                                    <span> تومان</span>
+                                </div>
+                                <a href="/order/open_user_order" class="basket-link">
+                                    <span>مشاهده سبد خرید</span>
+                                    <div class="basket-arrow"></div>
+                                </a>
+                            </div>
+                            <ul class="basket-list">
+                                {% for detail in details %}
+                                    <li >
+                                    <a href="#" class="basket-item">
+                                        <a href="{{ detail.get_product_url }}" class="basket-item-remove"></a>
+                                        <div class="basket-item-content">
+                                            <div class="basket-item-image">
+                                                <img alt="" src="{{detail.product.image.url}}">
+                                            </div>
+                                            <div class="basket-item-details">
+                                                <div class="basket-item-title" STYLE="font-size:inherit">{{ detail.product.title}}
+                                                </div>
+                                                <div class="basket-item-params">
+                                                    <div class="basket-item-props">
+                                                        <span> ۱ عدد</span>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                            <a href="#" class="basket-submit">ورود و ثبت سفارش</a>
+                        </ul>
